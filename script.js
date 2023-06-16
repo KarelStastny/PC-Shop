@@ -53,3 +53,12 @@ const products = [{
     image: "./images/9.JPG",
     categories: "tablet",
 },]
+
+// Zobrazení nákupního košíku
+let cart = document.querySelector("#cart img")
+let cartAll = document.querySelector(".cart-all")
+
+console.log(cart);
+    cart.addEventListener("click", () =>{
+        cartAll.classList.toggle("cart-all-active")
+    })

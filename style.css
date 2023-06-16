@@ -7,3 +7,57 @@
     outline: none;
 }
 
+body{
+    /* background-color: seagreen; */
+
+}
+
+header{
+    background-color: seagreen;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding: 10px;
+    
+}
+
+#logo{
+    width: 33%;
+}
+
+#search{
+    width: 33%;
+
+}
+
+#cart{
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#cart img{
+    width: 10%;
+}
+
+.cart-all{
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    height: 100vh;
+    width: calc(100% + 10px);
+    background-color: antiquewhite;
+    display: block;
+}
+/* Přepínací class na zviditelnějí */
+.cart-all-active{
+    display: none;
+}
