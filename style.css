@@ -12,6 +12,8 @@ body{
 
 }
 
+
+/* Header */
 header{
     background-color: seagreen;
     display: flex;
@@ -36,6 +38,8 @@ header{
 
 }
 
+
+/* Košík */
 #cart{
     width: 33%;
     display: flex;
@@ -55,9 +59,64 @@ header{
     height: 100vh;
     width: calc(100% + 10px);
     background-color: antiquewhite;
-    display: block;
+    display: none;
 }
 /* Přepínací class na zviditelnějí */
 .cart-all-active{
-    display: none;
+    display: block;
+}
+
+/* Main */
+main{
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    min-height: 95vh;
+
+}
+
+/* Sidebar */
+.sidebar{
+    width: 200px;
+    background-color: blueviolet;
+}
+.sidebar p{
+    background-color: chartreuse;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+
+.container-product{
+    width: 100%;
+    background-color: orange;
+}
+
+/* container produktu */
+
+.container-product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-product{
+    width: 250px;
+    height: 400px;
+    padding: 10px;
+    margin: 10px;
+    border: 3px solid red;
+
+  
+
+}
+
+.card-product img{
+    width: 100%;
+   
+
 }

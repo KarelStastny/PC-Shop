@@ -58,7 +58,33 @@ const products = [{
 let cart = document.querySelector("#cart img")
 let cartAll = document.querySelector(".cart-all")
 
-console.log(cart);
+// console.log(cart);
     cart.addEventListener("click", () =>{
         cartAll.classList.toggle("cart-all-active")
     })
+
+
+// Pole pro jednotlivé produkty
+let containerProduct = document.querySelector(".container-product")
+
+let productArry = []
+
+// Vypsání do stránky se 2 hodnotami (One product je jeden produkt + index)
+
+let getProduct = () => {
+    products.map( (oneProduct, index) => {
+        let card = document.createElement("div")
+            card.classList.add("card-product")
+            card.innerHTML = `
+            
+            <img src="${oneProduct.image}" alt="">
+            <h2>${oneProduct.name}</h2>
+            <h3>${oneProduct.price.toLocaleString()}</h3>
+            <button onclick="addToCard(${index})">Přidat do Košíku </button>
+            
+            `
+            containerProduct.appendChild(card)
+      
+    })
+}
+getProduct()
