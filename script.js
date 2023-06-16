@@ -54,18 +54,20 @@ const products = [{
     categories: "tablet",
 },]
 
-// Zobrazení nákupního košíku
+// Zobrazení nákupního košíku přidání tříd a zmenšení stránky pro karty
 let cart = document.querySelector("#cart img")
 let cartAll = document.querySelector(".cart-all")
+let containerProduct = document.querySelector(".container-product")
 
 // console.log(cart);
     cart.addEventListener("click", () =>{
         cartAll.classList.toggle("cart-all-active")
+
     })
 
 
 // Pole pro jednotlivé produkty
-let containerProduct = document.querySelector(".container-product")
+
 
 let productArry = []
 
@@ -78,10 +80,11 @@ let getProduct = () => {
             card.innerHTML = `
             
             <img src="${oneProduct.image}" alt="">
+            <article>
             <h2>${oneProduct.name}</h2>
-            <h3>${oneProduct.price.toLocaleString()}</h3>
+            <h3>${oneProduct.price.toLocaleString()} Kč</h3>
             <button onclick="addToCard(${index})">Přidat do Košíku </button>
-            
+            </article>
             `
             containerProduct.appendChild(card)
       
