@@ -58,7 +58,9 @@ const products = [{
 let cart = document.querySelector("#cart img")
 let cartAll = document.querySelector(".cart-all")
 let containerProduct = document.querySelector(".container-product")
+let cartQuantity = document.querySelector("#cart span")
 
+console.log(cartQuantity);
 // console.log(cart);
     cart.addEventListener("click", () =>{
         cartAll.classList.toggle("cart-all-active")
@@ -66,10 +68,7 @@ let containerProduct = document.querySelector(".container-product")
     })
 
 
-// Pole pro jednotlivé produkty
 
-
-let productArry = []
 
 // Vypsání do stránky se 2 hodnotami (One product je jeden produkt + index)
 
@@ -83,7 +82,7 @@ let getProduct = () => {
             <article>
             <h2>${oneProduct.name}</h2>
             <h3>${oneProduct.price.toLocaleString()} Kč</h3>
-            <button onclick="addToCard(${index})">Přidat do Košíku </button>
+            <button onclick="addToArry(${index})">Přidat do Košíku </button>
             </article>
             `
             containerProduct.appendChild(card)
@@ -91,3 +90,60 @@ let getProduct = () => {
     })
 }
 getProduct()
+
+
+
+// Po kliknutí na tlačíkto Přidat do košíku přidání produktů do do výpisového pole
+// Pole pro jednotlivé produkty
+let productArry = []
+
+const addToArry = (index) =>{
+    if(productArry[index] == null){
+        // POkud je pole prázdné protáhni přes local všechny naše produkty
+        productArry[index] = JSON.parse(JSON.stringify(products[index]))
+
+        // Přidá počet předmětů v košíku 
+        // productArry[index].cartQuantity = 1
+
+        // Zatím mi nefunguje
+    }
+
+    // Po přidání do pole produktů spusti výpisovou funkci v košíku vždy
+
+    reloadCard()
+}
+
+
+// Výpis do košíku
+const reloadCard  = () => {
+
+    
+
+    // Promazání toho co tam je  ??????????????????????????
+    cartAll.innerHTML = ""
+
+
+    // Zjistím jaké produkty jsou uložené v poli a vypíšu je do košíku
+    productArry.map( (oneProduct, index) => {
+        
+        // POkud v košíku něco je vypiš to
+        if(oneProduct != null){
+            let newDiv = document.createElement("cart-card")
+                newDiv.innerHTML = `
+                <img src="${oneProduct.image}" alt="">
+                <article>
+                <h2>${oneProduct.name}</h2>
+                <h3>${oneProduct.price.toLocaleString()} Kč</h3>
+                <button onclick="addToArry(${index})">Přidat do Košíku </button>
+                </article>
+                
+                `
+                cartAll.appendChild(newDiv)
+        }
+        
+
+    })
+
+}
+
+
