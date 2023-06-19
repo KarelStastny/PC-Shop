@@ -12,20 +12,31 @@ body{
     margin-top: 50px;
 }
 
+.all-container{
+    box-shadow: 0 0 10px black;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+
 
 /* Header */
 header{
-    background-color: seagreen;
+    /* background-color: seagreen; */
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    max-width: 1440px;
+    /* max-width: 1440px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto; */
     padding-left: 30px;
     padding-right: 30px;
     padding: 10px;
+    padding-bottom: 30px;
+    
     
 }
 
@@ -40,6 +51,30 @@ header{
 
 }
 
+.searchBox{
+    border: none;
+    border-bottom: 1px solid #141414;
+    padding-left: 15px;
+    font-size: 18px;
+    background-color: transparent;
+}
+
+#search button{
+   width: 33px;
+   height: 33px;
+   /* background: red; */
+   background-color: white;
+   border: none;
+   padding: 3px;
+   cursor: pointer;
+
+}
+
+#search button img{
+    width: 100%;
+   
+}
+
 
 /* Košík */
 #cart{
@@ -51,23 +86,26 @@ header{
     position: relative;
     padding-left: 20px;
     padding-right: 20px;
-    border: 3px solid red;
+    
+
+   
 
 
 }
 
 #cart article{
-    border: 3px solid red;
+
     position: relative;
 
 }
 
 #cart article img{
-    width: 10%;
+    width: 40px;
+    cursor: pointer;
 }
 
 #cart article span{
-    background-color: red;
+    background-color: rgb(238, 158, 158);
     border-radius: 50%;
     width: 20px;
     height: 20px;
@@ -79,26 +117,36 @@ header{
 }
 
 
+.total-price{
+     min-width: 50%;
+     text-align: center;
+}
+
+
 
 
 
 /* Main */
 main{
-    max-width: 1440px;
-    width: 100%;
-    margin: 0 auto;
+  
     display: flex;
 
     min-height: 95vh;
-
+   
 
 }
 
 /* Sidebar */
 .sidebar{
-    min-width: 200px;
-    max-width: 200px;
-    background-color: blueviolet;
+    min-width: 170px;
+    max-width: 170px;
+    /* background-color: #e5e5e5; */
+    /* background-color: blueviolet; */
+    /* border-radius: 15px; */
+    overflow: hidden;
+    margin-right: 30px;
+  
+    
 
 }
 
@@ -107,12 +155,37 @@ main{
 }
 .sidebar button{
     width: 100%;
-    background-color: chartreuse;
-    text-align: center;
-    padding: 10px;
-    border-bottom: 1px solid black;
+    /* background-color: chartreuse; */
+    /* text-align: center; */
+    text-align: left;
+    /* padding: 10px; */
+    /* margin-top: 1px; */
     cursor: pointer;
+    border: none;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: white;
+  
+    border-bottom: 1px solid black;
 }
+
+/* STyly pro funkci siedebar */
+
+.activeBtn{
+    /* font-size: 15px; */
+    font-weight: 800;
+}
+
+.activeBtn span{
+    display: inline-block;
+    width: 10px;
+    height: 30px;
+    background-color: blue;
+}
+
 
 
 
@@ -120,7 +193,7 @@ main{
 
 .container-product{
     width: 100%;
-    background-color: orange;
+    /* background-color: orange; */
     display: flex;
     flex-wrap: wrap;
 
@@ -130,7 +203,7 @@ main{
     width: 250px;
     height: 350px;
     padding: 10px;
-    margin: 15px;
+    margin: 10px;
     box-shadow: 0 0 10px black;
     position: relative;
     background-color: white;
@@ -190,7 +263,7 @@ main{
     max-width: 400px;
     width: 100%;
    
-    background-color: antiquewhite;
+    
     display: none;
 }
 /* Přepínací class na zviditelnějí */
@@ -232,13 +305,14 @@ main{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    padding: 5px;
     
 
 }
 
 .cart-card h2{
-    font-size: 15px;
-    max-width: 100px;
+    font-size: 12px;
+    max-width: 120px;
     text-transform: capitalize;
 }
 
@@ -247,8 +321,11 @@ main{
 }
 
 .cart-card div{
-    width: 100px;
+    min-width: 20px;
+    
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button-pluse{
@@ -258,6 +335,7 @@ main{
     border: none;
     background-color: rgb(65, 180, 65);
     font-size: 20px;
+    margin-right: 15px;
 }
 
 .button-minus{
@@ -270,7 +348,6 @@ main{
    
   
 }
-
 
 
 

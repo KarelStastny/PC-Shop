@@ -7,14 +7,16 @@
     <title>PC Shop</title>
 </head>
 <body>
+    <div class="all-container">
     <!-- Horní menu -->
     <header>
         <div id="logo">
             <h1>Můj obchod</h1>
         </div>
-        <form>
+        <form id="search">
             <input class="searchBox" placeholder="Vyhledej produkt" name="name" type="text">
-            <input type="submit">
+            <button type="submit"> <img src="./images/png_serach.png" alt=""></button>
+          
         </form>
         <!-- <div id="search">
             
@@ -37,18 +39,18 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-container">
-                <button onclick="filterSidebar('all')">Všechny produkty</button>
-                <button onclick="filterSidebar('phone')">Mobily</button>
-                <button onclick="filterSidebar('tablet')">Tablety</button>
-                <button onclick="filterSidebar('notebook')">Notebooky</button>
-                <button onclick="filterSidebar('pc')">Stolní PC</button>
-                <button onclick="filterSidebar('kamera')">Kamery</button>
-                <button onclick="filterSidebar('mys')">Myši</button>
-                <button onclick="filterSidebar('tv')">TV</button>
-                <button onclick="filterSidebar('sluchatka')">Sluchátka</button>
-                <button onclick="filterSidebar('dashboard')">Základní desky</button>
-                <button onclick="filterSidebar('ram')">Paměti RAM</button>
-                <button onclick="filterSidebar('procesor')">Procesory</button>
+                <button value="all" onclick="filterSidebar('all')">Všechny produkty <span></span></button>
+                <button value="phone" onclick="filterSidebar('phone')">Mobily <span></span></button>
+                <button value="tablet" onclick="filterSidebar('tablet')">Tablety <span></span></button>
+                <button value="notebook" onclick="filterSidebar('notebook')">Notebok <span></span></button>
+                <button value="pc" onclick="filterSidebar('pc')">Stolní PC <span></span></button>
+                <button value="kamera" onclick="filterSidebar('kamera')">Kamera <span></span></button>
+                <button value="mys" onclick="filterSidebar('mys')">Myši <span></span></button>
+                <button value="tv" onclick="filterSidebar('tv')">TV <span></span></button>
+                <button value="sluchatka" onclick="filterSidebar('sluchatka')">Sluchátka <span></span></button>
+                <button value="dashboard" onclick="filterSidebar('dashboard')">Základní desky <span></span></button>
+                <button value="ram" onclick="filterSidebar('ram')">Paměti RAM <span></span></button>
+                <button value="procesor" onclick="filterSidebar('procesor')">Procesor <span></span></button>
             </div>
         </div>
         <!-- Product container -->
@@ -66,6 +68,7 @@
             </div>
         </div>
     </main>
+</div>
 
     <script src="script.js"></script>
 </body>

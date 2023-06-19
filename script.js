@@ -256,28 +256,14 @@ const addToArry = (index) =>{
         // Po přidání nastaví quantitu předmětu na 1 kus
         productArry[index].quantity = 1
 
-        // Zatím mi nefunguje
+      
     }
    
-
-   
-    // renderCartColor()
-
-    
-
-
-
-
-
-
-
-    // Po přidání do pole produktů spusti výpisovou funkci v košíku vždy
 
     reloadCard()
   
 }
 
-// console.log(productArry);
 
 
 
@@ -330,7 +316,8 @@ const reloadCard  = () => {
         quantity.innerText = count
 
         // Uložení celkové ceny vedle košíku
-        document.querySelector(".total-price span").innerText = totalPrice.toLocaleString()
+        document.querySelector(".total-price span").innerText = `${totalPrice.toLocaleString()} Kč`
+         
 
     })
 
@@ -364,6 +351,7 @@ Filtrování produktů
 
 // Sidebar filter
 let cardProduct = document.querySelectorAll(".card-product")
+let buttonActive = document.querySelectorAll(".sidebar-container button")
 
 const filterSidebar = (filterValue) =>{
     cardProduct.forEach( (oneProduct) => {
@@ -375,14 +363,28 @@ const filterSidebar = (filterValue) =>{
         }else{
             oneProduct.style.display = "none"
         }
+
+
+
+        })
+
+
+    // Změna barvy v sidebaru podle toho na co je kliknuto
+    buttonActive.forEach( (oneBtn) => {
+        if(filterValue == oneBtn.value){
+            oneBtn.classList.add("activeBtn")
+        }else{
+            oneBtn.classList.remove("activeBtn")
+        }
         
     })
+
 
 }
 
 // Vyhledávací filter
 const search = document.querySelector("form")
-console.log(search);
+// console.log(search);
 
 search.addEventListener("submit", (e) => {
     e.preventDefault()
@@ -401,6 +403,12 @@ search.addEventListener("submit", (e) => {
             oneProduct.style.display = "none"
         }
     })
+
+
+    // Pokud bylo vyhledáno, zruší se všechny activeBtn že jsme v nějaké nabítce
+    buttonActive.forEach( (oneBtn) => {
+        oneBtn.classList.remove("activeBtn")
+    })
 })
 
 
@@ -410,15 +418,14 @@ search.addEventListener("submit", (e) => {
 
 let renderCartColor = () => {
     if( quantity.innerText !== ""){
-        console.log("není prázdný");
+       
         quantity.style.display = "initial"
     }else{
-        console.log("je prázdny");
+
         quantity.style.display = "none"
     }
 }
 
 renderCartColor()
-
 
 
