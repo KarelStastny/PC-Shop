@@ -202,10 +202,12 @@ const products = [{
 // Zobrazení nákupního košíku přidání tříd a zmenšení stránky pro karty
 let cart = document.querySelector("#cart img")
 let cartAll = document.querySelector(".cart-all")
+let cartlist = document.querySelector(".cart-list")
 let containerProduct = document.querySelector(".container-product")
-let cartQuantity = document.querySelector("#cart span")
+let quantity = document.querySelector(".quantity")
+let total = document.querySelector(".total")
 
-console.log(cartQuantity);
+console.log(quantity);
 // console.log(cart);
     cart.addEventListener("click", () =>{
         cartAll.classList.toggle("cart-all-active")
@@ -247,29 +249,41 @@ const addToArry = (index) =>{
         // POkud je pole prázdné protáhni přes local všechny naše produkty
         productArry[index] = JSON.parse(JSON.stringify(products[index]))
 
-        // Přidá počet předmětů v košíku 
-        productArry[index].cartQuantity = 1
+        // Po přidání nastaví quantitu předmětu na 1 kus
+        productArry[index].quantity = 1
 
         // Zatím mi nefunguje
     }
-
+   
     // Po přidání do pole produktů spusti výpisovou funkci v košíku vždy
 
     reloadCard()
 }
 
+console.log(productArry);
+
+
 
 // Výpis do košíku
 const reloadCard  = () => {
-
-    
+    let count = 0
+    let totalPrice = 0
 
     // Promazání toho co tam je  ??????????????????????????
-    cartAll.innerHTML = ""
-
+    cartlist.innerHTML = ""
 
     // Zjistím jaké produkty jsou uložené v poli a vypíšu je do košíku
     productArry.map( (oneProduct, index) => {
+
+        // vypočítání ceny v košíku
+        // vezme v každém cyklu celkovou hodnotu a přidá k tomu cenu 1 produktu
+        totalPrice = totalPrice + oneProduct.price
+
+        // Výpočet množství
+        count = count + oneProduct.quantity
+
+
+
         
         // POkud v košíku něco je vypiš to
         if(oneProduct != null){
@@ -284,18 +298,24 @@ const reloadCard  = () => {
           
               
                 <div>
-                    <button class="button-minus" onclick="changeQuantity(${index}, ${oneProduct.cartQuantity - 1 })">-</button>
+                    <button class="button-minus" onclick="changeQuantity(${index}, ${oneProduct.quantity - 1 })">-</button>
                     <div class="count">${oneProduct.quantity}</div>
-                    <button class="button-pluse" onclick="changeQuantity(${index}, ${oneProduct.cartQuantity + 1 })">+</button>
+                    <button class="button-pluse" onclick="changeQuantity(${index}, ${oneProduct.quantity + 1 })">+</button>
                 </div>
                 
                 `
-                cartAll.appendChild(newDiv)
+                cartlist.appendChild(newDiv)
         }
-        
+
+        // Ukládá celkovou cenu
+        total.innerText = totalPrice.toLocaleString()
+        // Ukládá počet předmětů v košíku
+        quantity.innerText = count
 
     })
 
 }
+
+// Změna monožství po kliknutí na + - v košíku
 
 
