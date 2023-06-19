@@ -207,7 +207,7 @@ let containerProduct = document.querySelector(".container-product")
 let quantity = document.querySelector(".quantity")
 let total = document.querySelector(".total")
 
-console.log(quantity);
+// console.log(quantity);
 // console.log(cart);
     cart.addEventListener("click", () =>{
         cartAll.classList.toggle("cart-all-active")
@@ -264,7 +264,7 @@ const addToArry = (index) =>{
     reloadCard()
 }
 
-console.log(productArry);
+// console.log(productArry);
 
 
 
@@ -359,6 +359,29 @@ const filterSidebar = (filterValue) =>{
     })
 
 }
+
+// Vyhledávací filter
+const search = document.querySelector("form")
+console.log(search);
+
+search.addEventListener("submit", (e) => {
+    e.preventDefault()
+    let value = e.target.elements.name.value
+       
+
+
+    cardProduct.forEach( (oneProduct) => {
+
+        // console.log(oneProduct.innerHTML);
+        console.log();
+
+        if(oneProduct.innerHTML.toLowerCase().includes(value.toLowerCase())){
+            oneProduct.style.display = "block"
+        }else{
+            oneProduct.style.display = "none"
+        }
+    })
+})
 
 
 
