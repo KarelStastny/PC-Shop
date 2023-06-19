@@ -223,6 +223,10 @@ let getProduct = () => {
     products.map( (oneProduct, index) => {
         let card = document.createElement("div")
             card.classList.add("card-product")
+
+            // Přidání class pro filtrování
+            card.classList.add("all")
+            card.classList.add(`${oneProduct.categories}`)
             card.innerHTML = `
             
             <img src="${oneProduct.image}" alt="">
@@ -333,6 +337,28 @@ const changeQuantity = (index, quantity) => {
 
 
 
+
+/*
+Filtrování produktů
+*/
+
+// Sidebar filter
+let cardProduct = document.querySelectorAll(".card-product")
+
+const filterSidebar = (filterValue) =>{
+    cardProduct.forEach( (oneProduct) => {
+        // console.log(filterValue);
+        let value = oneProduct.classList.value
+
+        if(value.includes(filterValue)){
+            oneProduct.style.display = "block"
+        }else{
+            oneProduct.style.display = "none"
+        }
+        
+    })
+
+}
 
 
 
