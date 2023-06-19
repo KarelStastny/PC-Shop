@@ -347,6 +347,7 @@ const changeQuantity = (index, quantity) => {
     reloadCard()
 
     renderCartColor()
+    reloadtotal()
 }
 
 
@@ -436,4 +437,19 @@ let renderCartColor = () => {
 renderCartColor()
 
 
-// Hlídání prázdnoty
+// Zjištění zda není košík prázdný a pokud je tak aby se vše vynulovalo
+
+const reloadtotal = () => {
+
+    // zjištění kdy je košík prázdný
+    console.log(cartlist);
+
+    if(cartlist.innerHTML == ""){
+        quantity.innerText = ""
+        total.innerText = ""
+        document.querySelector(".total-price span").innerText = ""
+    }
+
+    // Znovuprojetí stylů
+    renderCartColor()
+}
