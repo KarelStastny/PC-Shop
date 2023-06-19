@@ -72,7 +72,7 @@ main{
 
 /* Sidebar */
 .sidebar{
-    min-width: 200px;
+    width: 200px;
     background-color: blueviolet;
     /* position: fixed; */
 }
@@ -80,7 +80,8 @@ main{
 .sidebar-container{
     position: sticky;
 }
-.sidebar p{
+.sidebar button{
+    width: 100%;
     background-color: chartreuse;
     text-align: center;
     padding: 10px;

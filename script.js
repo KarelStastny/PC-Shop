@@ -319,3 +319,20 @@ const reloadCard  = () => {
 // Změna monožství po kliknutí na + - v košíku
 
 
+const changeQuantity = (index, quantity) => {
+    if(quantity == 0){
+        // POkud se hodnota možtví v košíku dostane na 0 smaže se zboží z košíku
+        delete productArry[index]
+    }else{
+        // Výpočet ceny po zvýšení
+        productArry[index].quantity = quantity
+        productArry[index].price = quantity * products[index].price
+    }
+    reloadCard()
+}
+
+
+
+
+
+
