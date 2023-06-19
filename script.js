@@ -259,9 +259,22 @@ const addToArry = (index) =>{
         // Zatím mi nefunguje
     }
    
+
+   
+    // renderCartColor()
+
+    
+
+
+
+
+
+
+
     // Po přidání do pole produktů spusti výpisovou funkci v košíku vždy
 
     reloadCard()
+  
 }
 
 // console.log(productArry);
@@ -316,7 +329,14 @@ const reloadCard  = () => {
         // Ukládá počet předmětů v košíku
         quantity.innerText = count
 
+        // Uložení celkové ceny vedle košíku
+        document.querySelector(".total-price span").innerText = totalPrice.toLocaleString()
+
     })
+
+    // Spuštění funce pro barvy
+    renderCartColor()
+
 
 }
 
@@ -382,6 +402,23 @@ search.addEventListener("submit", (e) => {
         }
     })
 })
+
+
+
+
+// POložky v košíku barva a zobrazení
+
+let renderCartColor = () => {
+    if( quantity.innerText !== ""){
+        console.log("není prázdný");
+        quantity.style.display = "initial"
+    }else{
+        console.log("je prázdny");
+        quantity.style.display = "none"
+    }
+}
+
+renderCartColor()
 
 
 
