@@ -8,7 +8,6 @@
 }
 
 body{
-    /* background-color: seagreen; */
     margin-top: 50px;
 }
 
@@ -24,26 +23,18 @@ body{
 
 /* Header */
 header{
-    /* background-color: seagreen; */
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    /* max-width: 1440px;
-    width: 100%;
-    margin: 0 auto; */
+    min-height: 120px;
     padding-left: 30px;
     padding-right: 30px;
     padding: 10px;
-    padding-bottom: 30px;
-    
-    
 }
 
 #logo{
     width: 33%;
     text-align: center;
-    
 }
 
 #logo h1 a{
@@ -53,7 +44,9 @@ header{
 #search{
     width: 33%;
     text-align: center;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .searchBox{
@@ -63,28 +56,25 @@ header{
     font-size: 18px;
     background-color: transparent;
     height: 100%;
+    width: 100%;
 }
 
 #search button{
-   width: 33px;
-   height: 33px;
-   /* background: red; */
-   background-color: white;
-   border: none;
-   padding: 3px;
-   cursor: pointer;
-
+    width: 33px;
+    height: 33px;
+    background-color: white;
+    border: none;
+    padding: 3px;
+    cursor: pointer;
 }
 
 #search button img{
     width: 100%;
-   
 }
 
 
 /* Košík */
 #cart{
-    /* text-align: center; */
     width: 400px;
     display: flex;
     align-items: center;
@@ -92,17 +82,10 @@ header{
     position: relative;
     padding-left: 20px;
     padding-right: 20px;
-    
-
-   
-
-
 }
 
 #cart article{
-
     position: relative;
-
 }
 
 #cart article img{
@@ -124,64 +107,40 @@ header{
 
 
 .total-price{
-     min-width: 50%;
-     text-align: center;
+    min-width: 50%;
+    text-align: center;
 }
-
-
-
 
 
 /* Main */
 main{
-  
     display: flex;
-
     min-height: 95vh;
-   
-
 }
 
 /* Sidebar */
 .sidebar{
     min-width: 170px;
     max-width: 170px;
-    /* background-color: #e5e5e5; */
-    /* background-color: blueviolet; */
-    /* border-radius: 15px; */
     overflow: hidden;
     margin-right: 30px;
-  
-    
-
 }
 
-.sidebar-container{
-  
-}
 .sidebar button{
     width: 100%;
-    /* background-color: chartreuse; */
-    /* text-align: center; */
     text-align: left;
-    /* padding: 10px; */
-    /* margin-top: 1px; */
     cursor: pointer;
     border: none;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     background-color: white;
-  
     border-bottom: 1px solid black;
 }
 
 /* STyly pro funkci siedebar */
-
 .activeBtn{
-    /* font-size: 15px; */
     font-weight: 800;
 }
 
@@ -193,16 +152,12 @@ main{
 }
 
 
-
-
 /* container produktu */
 
 .container-product{
     width: 100%;
-    /* background-color: orange; */
     display: flex;
     flex-wrap: wrap;
-
 }
 
 .card-product{
@@ -214,25 +169,19 @@ main{
     position: relative;
     background-color: white;
     border-radius: 5px;
-  
-
 }
 
 .card-product img{
     width: 100%;
     height: 220px;
     object-fit: contain;
-
 }
 .card-product article{
-
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 10px;
-
-
 }
 
 .card-product article h2{
@@ -254,22 +203,13 @@ main{
     margin: 0 10px;
     cursor: pointer;
     border-radius: 5px;
-
 }
-
-
-
 
 /* Okno košíku  */
 .cart-all{
-
-
-
     min-height: 100vh;
     max-width: 400px;
     width: 100%;
-   
-    
     display: none;
 }
 /* Přepínací class na zviditelnějí */
@@ -282,38 +222,25 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
     height: 80px;
     max-width: 400px;
-    /* border: 3px solid red; */
     border-bottom: 1px solid rgba(0, 0, 0, 0.164);
-
-
-
 }
 .cart-card article{
-    /* object-fit: cover; */
     height: 65px;
     width: 65px;
-    /* border: 3px solid red; */
     margin-left: 10px;
-    /* margin-right: 0px; */
     border-radius: 50%;
     overflow: hidden;
     padding: 5px;
     background-color: white;
     box-shadow: 0 0 5px black;
-    
-    
-
 }
 .cart-card article img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     padding: 5px;
-    
-
 }
 
 .cart-card h2{
@@ -328,7 +255,6 @@ main{
 
 .cart-card div{
     min-width: 20px;
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -351,41 +277,31 @@ main{
     border: none;
     background-color: rgb(221, 116, 112);
     font-size: 20px;
-   
-  
 }
 
 .cart-list{
-    /* background-color: orange; */
     min-height: 50vh;
-    /* box-shadow: 0 0 10px #141414; */
     border-left: 1px solid rgba(0, 0, 0, 0.158);
     border-right: 1px solid rgba(0, 0, 0, 0.158);
 }
 
 .checkOut{
-    /* background-color: red; */
-    
     display: flex;
     align-items: center;
     justify-content: right;
     box-shadow: 0 0 10px #141414;
-
 }
 .total{
-
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 10px;
     margin-left: 30px;
-
 }
 .checkOut p{
     font-weight: 900;
 }
-
 .checkOut span{
     margin-right: 15px;
 }

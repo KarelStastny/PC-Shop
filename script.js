@@ -207,18 +207,13 @@ let containerProduct = document.querySelector(".container-product")
 let quantity = document.querySelector(".quantity")
 let total = document.querySelector(".total")
 
-// console.log(quantity);
-// console.log(cart);
     cart.addEventListener("click", () =>{
         cartAll.classList.toggle("cart-all-active")
-
     })
 
 
 
-
 // Vypsání do stránky se 2 hodnotami (One product je jeden produkt + index)
-
 let getProduct = () => {
     products.map( (oneProduct, index) => {
         let card = document.createElement("div")
@@ -243,7 +238,6 @@ let getProduct = () => {
 getProduct()
 
 
-
 // Po kliknutí na tlačíkto Přidat do košíku přidání produktů do do výpisového pole
 // Pole pro jednotlivé produkty
 let productArry = []
@@ -255,13 +249,8 @@ const addToArry = (index) =>{
 
         // Po přidání nastaví quantitu předmětu na 1 kus
         productArry[index].quantity = 1
-
-      
     }
-   
-
     reloadCard()
-  
 }
 
 
@@ -285,9 +274,6 @@ const reloadCard  = () => {
         // Výpočet množství
         count = count + oneProduct.quantity
 
-
-
-        
         // POkud v košíku něco je vypiš to
         if(oneProduct != null){
             let newDiv = document.createElement("cart-card")
@@ -295,17 +281,13 @@ const reloadCard  = () => {
                 newDiv.innerHTML = `
 
                 <article><img src="${oneProduct.image}" alt=""></article>
-              
                 <h2>${oneProduct.name}</h2>
                 <h3>${oneProduct.price.toLocaleString()} Kč</h3>
-          
-              
                 <div>
                     <button class="button-minus" onclick="changeQuantity(${index}, ${oneProduct.quantity - 1 })">-</button>
                     <div class="count">${oneProduct.quantity}</div>
                     <button class="button-pluse" onclick="changeQuantity(${index}, ${oneProduct.quantity + 1 })">+</button>
                 </div>
-                
                 `
                 cartlist.appendChild(newDiv)
         }
@@ -317,23 +299,14 @@ const reloadCard  = () => {
 
         // Uložení celkové ceny vedle košíku
         document.querySelector(".total-price span").innerText = `${totalPrice.toLocaleString()} Kč`
-         
-
-    
     })
-
-
-
 
     // Spuštění funce pro barvy
     renderCartColor()
 
-
 }
 
 // Změna monožství po kliknutí na + - v košíku
-
-
 const changeQuantity = (index, quantity) => {
     if(quantity == 0){
         // POkud se hodnota možtví v košíku dostane na 0 smaže se zboží z košíku
@@ -345,7 +318,6 @@ const changeQuantity = (index, quantity) => {
         productArry[index].price = quantity * products[index].price
     }
     reloadCard()
-
     renderCartColor()
     reloadtotal()
 }
@@ -363,7 +335,6 @@ let buttonActive = document.querySelectorAll(".sidebar-container button")
 
 const filterSidebar = (filterValue) =>{
     cardProduct.forEach( (oneProduct) => {
-        // console.log(filterValue);
         let value = oneProduct.classList.value
 
         if(value.includes(filterValue)){
@@ -371,9 +342,6 @@ const filterSidebar = (filterValue) =>{
         }else{
             oneProduct.style.display = "none"
         }
-
-
-
         })
 
 
@@ -386,24 +354,16 @@ const filterSidebar = (filterValue) =>{
         }
         
     })
-
-
 }
 
 // Vyhledávací filter
 const search = document.querySelector("form")
-// console.log(search);
 
 search.addEventListener("submit", (e) => {
     e.preventDefault()
     let value = e.target.elements.name.value
        
-
-
     cardProduct.forEach( (oneProduct) => {
-
-        // console.log(oneProduct.innerHTML);
-        console.log();
 
         if(oneProduct.innerHTML.toLowerCase().includes(value.toLowerCase())){
             oneProduct.style.display = "block"
@@ -412,7 +372,6 @@ search.addEventListener("submit", (e) => {
         }
     })
 
-
     // Pokud bylo vyhledáno, zruší se všechny activeBtn že jsme v nějaké nabítce
     buttonActive.forEach( (oneBtn) => {
         oneBtn.classList.remove("activeBtn")
@@ -420,16 +379,11 @@ search.addEventListener("submit", (e) => {
 })
 
 
-
-
 // POložky v košíku barva a zobrazení
-
 let renderCartColor = () => {
     if( quantity.innerText == ""){
-       
         quantity.style.display = "none"
     }else{
-
         quantity.style.display = "initial"
     }
 }
@@ -438,11 +392,9 @@ renderCartColor()
 
 
 // Zjištění zda není košík prázdný a pokud je tak aby se vše vynulovalo
-
 const reloadtotal = () => {
 
     // zjištění kdy je košík prázdný
-    console.log(cartlist);
 
     if(cartlist.innerHTML == ""){
         quantity.innerText = ""
