@@ -272,7 +272,7 @@ const reloadCard  = () => {
     let count = 0
     let totalPrice = 0
 
-    // Promazání toho co tam je  ??????????????????????????
+    // Promazání toho co je v košíku a získání dat znova
     cartlist.innerHTML = ""
 
     // Zjistím jaké produkty jsou uložené v poli a vypíšu je do košíku
@@ -319,7 +319,11 @@ const reloadCard  = () => {
         document.querySelector(".total-price span").innerText = `${totalPrice.toLocaleString()} Kč`
          
 
+    
     })
+
+
+
 
     // Spuštění funce pro barvy
     renderCartColor()
@@ -333,6 +337,7 @@ const reloadCard  = () => {
 const changeQuantity = (index, quantity) => {
     if(quantity == 0){
         // POkud se hodnota možtví v košíku dostane na 0 smaže se zboží z košíku
+    
         delete productArry[index]
     }else{
         // Výpočet ceny po zvýšení
@@ -340,6 +345,8 @@ const changeQuantity = (index, quantity) => {
         productArry[index].price = quantity * products[index].price
     }
     reloadCard()
+
+    renderCartColor()
 }
 
 
@@ -417,15 +424,16 @@ search.addEventListener("submit", (e) => {
 // POložky v košíku barva a zobrazení
 
 let renderCartColor = () => {
-    if( quantity.innerText !== ""){
+    if( quantity.innerText == ""){
        
-        quantity.style.display = "initial"
+        quantity.style.display = "none"
     }else{
 
-        quantity.style.display = "none"
+        quantity.style.display = "initial"
     }
 }
 
 renderCartColor()
 
 
+// Hlídání prázdnoty
